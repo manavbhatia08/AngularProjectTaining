@@ -8,7 +8,7 @@ import { userService } from './user.service';
 })
 export class AppComponent {
   constructor(private _userService: userService) {
-    localStorage.setItem("users", JSON.stringify(_userService.getAllUsers()));
+    // localStorage.setItem("users", JSON.stringify(_userService.getAllUsers()));
   }
 
   title = 'project1';

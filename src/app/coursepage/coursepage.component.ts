@@ -16,12 +16,8 @@ export class CoursepageComponent  implements OnInit{
 
 
   reviewForm !: any;
-
-
   text !: any;
   rating !: any;
-
-  
   a!:any;
 
   courseId : number  = 0;

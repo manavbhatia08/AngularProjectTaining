@@ -1,13 +1,17 @@
 <app-navbar></app-navbar>
 
 <div class="wrap-content">
+    
     <div class="cont1">
+
         <div class="content1">
             <p>{{course.cTitle}}</p>
         </div>
+
         <div class="content12">
             <p>{{course.cTitle}}</p>
         </div>
+
         <div class="content2">
             <p>{{course.cOverview}}</p>
         </div>
@@ -18,23 +22,25 @@
             <button *ngIf="course.cEnroll" ><span>Start Watching</span> <fa-icon [icon]="['fas', 'tv']" [styles]="{color : 'white' , background : 'none' }" size="1x"></fa-icon></button>
         </div>
 
-        
-
     </div>
 
     <div class="cont2">
+
         <div class="videoalign">
         <video controls height="350px" width="580px" >
             <source src="/assets/Workhub.mp4" type="video/mp4">
         </video>
+        </div>
+
     </div>
-    </div>
+
 </div>
 
 
 <div class="keyhead">
     Key <b>Highlights</b>
 </div>
+
 <div class="keyhighlights">
     <div class="keyhighlights1">
         <span><fa-icon [icon]="['far', 'bell']" ></fa-icon></span>
@@ -93,17 +99,24 @@
         </ul>
     </nav>
 </div>   -->
+
+
+
+
 <!-- // Overview -->
-     <div class="CourseOverview">
-        <div class="overviewhead">
-            <b>Course</b>
-        </div>
-    <div id="hg">{{course.cOverview}}</div>
+<div class="CourseOverview">
+    <div class="overviewhead">
+        <b>Course</b>
     </div>
+    <div id="hg">{{course.cOverview}}</div>
+</div>
+
+
+<!-- curriculum -->
 <div class="curriculum">
-<div class="curriculumhead">
-    <b>Curriculum</b>
-</div> 
+    <div class="curriculumhead">
+        <b>Curriculum</b>
+    </div> 
 
 
   <accordion [isAnimated]="true">
@@ -142,36 +155,47 @@
             <li><a href="http://www.google.com">Lorem ipsum dolor sit amet.</a></li>
         </ul>
     </accordion-group> -->
-</accordion>
+    </accordion>
 </div>
 
+<!-- reviews -->
+
 <div class="reviewcont">
+
     <div class="reviewhead">
     <h2>Course Rating : {{getrating(review)}}/10</h2>
-</div>
-<div class="revform">
-    <form [formGroup]="reviewForm">
-    
-        <label for="text">Your Feedback : </label>
-        <input id="text" type="text" formControlName="text" placeholder="Write review..">
-      
-        <label for="rating">Rating : </label>
-        <input id="rating" type="number" formControlName="rating" placeholder="Out of 10">
-    
-        <button type="button" (click)="onSubmit()">Submit</button>
-      
-    </form>
     </div>
-<div class="revmain">
-    <div class="review">
-    <div class="card" *ngFor="let r of review">
+
+    <div class="revform">
+        <form [formGroup]="reviewForm">
         
-        <div class="card-body">
-          <h5 class="card-title">{{r.rating}}/10</h5>
-          <p class="card-text">{{r.text}}</p>
-        </div>
+            <label for="text">Your Feedback : </label>
+            <input id="text" type="text" formControlName="text" placeholder="Write review..">
+        
+            <label for="rating">Rating : </label>
+            <input id="rating" type="number" formControlName="rating" placeholder="Out of 10">
+        
+            <button type="button" (click)="onSubmit()">Submit</button>
+        
+        </form>
     </div>
-</div>
+
+    
+<div class="revmain">
+
+    <div class="review">
+
+        <div class="card" *ngFor="let r of review">
+            
+            <div class="card-body">
+            <h5 class="card-title">{{r.rating}}/10</h5>
+            <p class="card-text">{{r.text}}</p>
+            </div>
+            
+        </div>
+
+    </div>
+
 </div>
 
 
