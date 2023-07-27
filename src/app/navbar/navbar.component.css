@@ -1,0 +1,38 @@
+.nav-item {
+    margin-right: 50px;
+    
+}
+.nav-item:first-child {
+    margin-left: 50px;
+    
+}
+.homologo{
+    margin-left: 50px;
+}
+#logo{
+    padding: 0px;
+}
+a{
+    font-size: 17px;
+}
+.nav-item :hover{
+    color: #FF4F00;
+}
+.form-control{
+    width:450px;
+}
+.f1{
+    justify-self: end;
+} 
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    height:58px;
+    width:auto;
+}
+

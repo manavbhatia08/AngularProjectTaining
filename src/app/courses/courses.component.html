@@ -1,0 +1,91 @@
+<!-- <app-navbar></app-navbar> -->
+
+<div class="heading">
+    <p>Explore all courses</p>
+</div>
+
+<div class="coursearea">
+    
+  <div class="filter">
+
+      <div class="category">
+      <div class="finance" (click)="displaycategory('Finance')">
+      <div class="logocontainer">
+      <div class="logo">
+      <fa-icon [icon]="['fas', 'money-check-dollar']" [styles]="{color : 'white' , background : 'none' }" size="3x"></fa-icon>
+      </div>
+      <div class="cname">
+      Finance
+      </div>
+      </div>
+      </div>
+
+      <div class="dev" (click)="displaycategory('Development')">
+      <div class="logocontainer">
+      <div class="logo">
+      <fa-icon [icon]="['fas', 'code']" [styles]="{color : 'white' , background : 'none' }" size="3x"></fa-icon>
+      </div>
+      <div class="cname">
+      Development
+      </div>
+      </div>
+      </div>
+
+      <div class="lifestyle" (click)="displaycategory('Personality')">
+      <!-- (click)="displaycategory("Finance")" -->
+      <div class="logocontainer" >
+      <div class="logo">
+      <fa-icon [icon]="['fas', 'glasses']" [styles]="{color : 'white' , background : 'none' }" size="3x"></fa-icon>
+      </div>
+      <div class="cname">
+      Personality
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <div class="difficulty">
+        <div class="h">Difficulty</div>
+        <div><button type="button" class="btn btn-primary" (click)="displayDifficulty('Beginner')"><span class ="buttontext" >Beginner</span></button></div>
+        <div><button type="button" class="btn btn-primary" (click)="displayDifficulty('Intermediate')"><span class="buttontext" >Intermediate</span></button></div>
+        <div><button type="button" class="btn btn-primary" (click)="displayDifficulty('Advanced')"><span class="buttontext">Advanced</span></button></div>
+      </div>
+
+      <div class="duration">
+        <div class="h">Duration</div>
+        <div><button type="button" class="btn btn-primary" (click)="displayDuration(0,5)"><span class ="buttontext">less than 5hrs</span></button></div>
+        <div><button type="button" class="btn btn-primary" (click)="displayDuration(5,10)"><span class="buttontext">5hrs - 10hrs</span></button></div>
+        <div><button type="button" class="btn btn-primary" (click)="displayDuration(10,500)"><span class="buttontext">more than 10hrs</span></button></div>
+      </div>
+
+      <div class="reset"><button type="button" class="btn btn-outline-primary" (click)="reset()"><span class="buttontext">Reset Filters</span></button></div>
+
+
+  </div>
+
+  <div class="courses g-0 " *ngIf="tempCourses.length!=0"   >
+    <div  class="hh " *ngFor="let c of tempCourses" [routerLink]="['/course-page', c.cId]">
+      <div class="card" style="width: 22rem;">
+          <img class="card-img-top" [src]="c.cImage" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{c.cTitle}}</h5>
+            <p class="card-text">{{c.cDescription}}</p>
+            <p class="card-text"><span class="instructor">{{c.cInstructor}}</span><span class="rating"> Rating : {{getrating(c.cReviews)}}/10</span><span class="duration">{{c.cDuration}}Hrs</span></p>
+          </div>
+      </div>
+    </div>
+    
+
+  </div>
+
+  <div class="courses g-0 " *ngIf="tempCourses.length==0"   >
+    <div class="resetcont">
+    <div class="notext"><p>No Results</p></div>
+    <div class="reset"><button type="button" class="btn btn-outline-primary" (click)="reset()"><span class="buttontext">Reset Filters</span></button></div>
+  </div>
+  </div>
+
+
+
+
+</div> 
